@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disease Prediction System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-logo"><i class="fas fa-heartbeat"></i> Disease Prediction System</a>
+            <ul class="nav-menu">
+                <li><a href="/" class="nav-link">Home</a></li>
+                <li><a href="/diagnosis" class="nav-link">Diagnosis</a></li>
+                <li><a href="/history" class="nav-link">History</a></li>
+                <li><a href="/about" class="nav-link active">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section style="padding: 80px 20px;">
+        <div class="container" style="max-width: 900px;">
+            <div class="panel">
+                <h3 style="font-size: 1.8rem; margin-bottom: 15px;">Model Architecture & Performance</h3>
+                <p style="color: var(--text-muted); font-size: 1.05rem; margin-bottom: 30px;">
+                    Our engine utilizes a carefully tuned Random Forest Classifier trained on a synthetically augmented dataset. 
+                    Unlike basic models that overfit and memorize data (showing artificial 100% scores), our model uses stratified splitting, gentle noise injection, and balanced class weights to ensure generalizability in real-world scenarios.
+                </p>
+                
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <h4>41</h4>
+                        <p>Tracked Diseases</p>
+                    </div>
+                    <div class="stat-box">
+                        <h4>132</h4>
+                        <p>Input Symptoms</p>
+                    </div>
+                    <div class="stat-box">
+                        <h4>94%</h4>
+                        <p>Testing Accuracy</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

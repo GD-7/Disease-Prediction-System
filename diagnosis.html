@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disease Prediction System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-logo"><i class="fas fa-heartbeat"></i> Disease Prediction System</a>
+            <ul class="nav-menu">
+                <li><a href="/" class="nav-link">Home</a></li>
+                <li><a href="/diagnosis" class="nav-link active">Diagnosis</a></li>
+                <li><a href="/history" class="nav-link">History</a></li>
+                <li><a href="/about" class="nav-link">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="predict-section">
+        <div class="predict-wrapper">
+            <div class="panel">
+                <h3>Symptom Analysis</h3>
+                <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 25px;">Search and select your current symptoms from the database.</p>
+                
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="symptomSearch" class="search-input" placeholder="E.g., high fever, headache...">
+                </div>
+
+                <div id="symptomsList" class="symptoms-list">
+                    <!-- JS injects ALL suggestion chips here -->
+                </div>
+
+                <h4 style="font-size: 1rem; margin-bottom: 12px; color: var(--text-main);">Selected Symptoms</h4>
+                <div id="selectedList" class="selected-list">
+                    <p style="color: #64748b; font-size:0.95rem; margin:auto;">No symptoms selected yet.</p>
+                </div>
+
+                <div style="display: flex; gap: 15px; margin-top: 25px;">
+                    <button class="btn btn-primary" style="flex: 2; justify-content: center;" onclick="predictDisease()"><i class="fas fa-microscope"></i> Analyze Symptoms</button>
+                    <button class="btn btn-secondary" style="flex: 1; justify-content: center;" onclick="clearSymptoms()">Clear</button>
+                </div>
+            </div>
+
+            <div class="panel">
+                <h3>Clinical Assessment</h3>
+                
+                <div id="emptyState" style="text-align: center; padding: 80px 20px;">
+                    <i class="fas fa-notes-medical" style="font-size: 4rem; color: #cbd5e1; margin-bottom: 20px;"></i>
+                    <p style="color: var(--text-muted); font-size: 1.05rem;">Add symptoms on the left to generate a clinical assessment.</p>
+                </div>
+
+                <div id="resultsContainer" class="hidden">
+                    <div id="resultsList"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

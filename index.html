@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disease Prediction System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-logo"><i class="fas fa-heartbeat"></i> Disease Prediction System</a>
+            <ul class="nav-menu">
+                <li><a href="/" class="nav-link active">Home</a></li>
+                <li><a href="/diagnosis" class="nav-link">Diagnosis</a></li>
+                <li><a href="/history" class="nav-link">History</a></li>
+                <li><a href="/about" class="nav-link">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <h1 class="hero-title">Smarter Health <span>Decisions</span></h1>
+            <p class="hero-subtitle">Our clinical machine learning model analyzes your symptom patterns to provide accurate, data-driven disease predictions in seconds.</p>
+            <a href="/diagnosis" class="btn btn-primary">
+                Start Diagnosis <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </section>
+</body>
+</html>
